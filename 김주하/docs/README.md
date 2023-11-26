@@ -22,10 +22,10 @@
 
 ## 서비스 개발
 ### 기술 스택: Reast, Styled-Component, antd, Vite
-- [] React install
-- [] npm install styled-components antd @ant=design/icons
+- [x] React install
+- [x] npm install styled-components antd @ant=design/icons
 - [] make counter: useState, event, handle
-- [] GPT API KEY발급, env 설정
+- [x] GPT API KEY발급, env 설정
 - [] UserInput 처리
 - [] antd, styled-components 소개 및 스타일 컴포넌트
 - [] refactoring - loading, icon, errer message
