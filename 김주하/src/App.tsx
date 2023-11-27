@@ -57,7 +57,7 @@ function App(): ReactElement {
     <AppContainer>
       {contextHolder}
       <AppTitle>
-        일기 with GPT <img width={"100px"} src={logo} alt="logo"></img>
+        일기 with GPT <img width={"50px"} src={logo} alt="logo"></img>
       </AppTitle>
       <DiaryInput
         messageApi={messageApi}
