@@ -1,0 +1,20 @@
+.img-list {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.detail {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 20px;
+    border-radius: 8px;
+    background: white;
+}
+
+.detail-not-found {
+    color: red;
+    font-size: 18px;
+}
