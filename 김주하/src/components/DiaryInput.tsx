@@ -57,7 +57,7 @@ const DiaryInput: React.FC<DiaryInputProps> = ({ isLoading, onSubmit, messageApi
 
   return (
     <div>
-      <Title>오늘의 일;</Title>
+      <Title>오늘의 일기</Title>
       <TextArea
         value={userInput}
         onChange={handleUserInput}
@@ -66,7 +66,7 @@ const DiaryInput: React.FC<DiaryInputProps> = ({ isLoading, onSubmit, messageApi
       />
       <ButtonContainer>
         <Button loading={isLoading} onClick={handleClick}>
-          오늘 나의 하루는?
+          오늘 하루 분석하기
         </Button>
         <Button
           icon={<FileImageOutlined />}

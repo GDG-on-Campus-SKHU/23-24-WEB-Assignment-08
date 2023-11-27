@@ -21,11 +21,12 @@
  * }
  * [events]
  * "'''"
- * Attended a coding lecture.
- * Many bugs occurred in the project.
- * Searched on Stack Overflow but couldn't resolve.
- * Resolved it using GPT again.
- * But, will solving it like this help improve development skills?
+코딩 강의를 들었다. 
+프로젝트에 버그가 많이 나왔음. 
+스택오버플로에서 검색했지만 해결 안 되었어. 
+역시 gpt를 통해서 해결했다. 
+근데 이렇게 해결하는게 개발실력에 도움 될까,,?
+
  * "''"
  */
 
