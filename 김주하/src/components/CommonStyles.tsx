@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Title = styled.div`
   font-size: 20px;
-  margin: 10px;
+  margin: 20px 10px 10px 10px;
 `;
 
 export const ResultTitle = styled.div`

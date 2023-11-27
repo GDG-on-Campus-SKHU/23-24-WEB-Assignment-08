@@ -4,7 +4,7 @@ import DiaryInput from "./components/DiaryInput";
 import styled from "styled-components";
 import DiaryDisplay from "./components/DiaryDisplay";
 import { message } from "antd";
-import logo from "./assets/logo.png";
+import logo from "./assets/logo.jfif";
 
 // dummyData의 타입 정의: JSON 파싱 값 추출(돈 아낌)
 const dummyData: DiaryData = {
@@ -57,7 +57,8 @@ function App(): ReactElement {
     <AppContainer>
       {contextHolder}
       <AppTitle>
-        일기 with GPT <img width={"50px"} src={logo} alt="logo"></img>
+        <img width={"35px"} src={logo} alt="logo"></img> GPT가 분석하는 나의 하루
+        {/* GPT가 분석해주는 나의 하루 */}
       </AppTitle>
       <DiaryInput
         messageApi={messageApi}
