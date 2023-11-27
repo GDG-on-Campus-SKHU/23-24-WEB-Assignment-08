@@ -24,11 +24,11 @@
 ### 기술 스택: Reast, Styled-Component, antd, Vite
 - [x] React install
 - [x] npm install styled-components antd @ant=design/icons
-- [] make counter: useState, event, handle
+- [x] make counter: useState, event, handle
 - [x] GPT API KEY발급, env 설정
 - [] UserInput 처리
-- [] antd, styled-components 소개 및 스타일 컴포넌트
-- [] refactoring - loading, icon, errer message
+- [x] antd, styled-components 소개 및 스타일 컴포넌트
+- [x] refactoring - loading, icon, errer message
 
 ## 주의점
 1. API 호출 유료 > 하루 사용량 제한
