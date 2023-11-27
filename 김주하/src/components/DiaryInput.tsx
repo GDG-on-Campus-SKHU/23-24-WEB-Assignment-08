@@ -39,19 +39,20 @@ const DiaryInput: React.FC<DiaryInputProps> = ({ isLoading, onSubmit, messageApi
   };
 
   const captureAndDownload = async () => {
-    const nodeToCapture = document.getElementById("capture");
-    console.log(nodeToCapture);
+    const nodeToCapture = document.getElementById("capture") as HTMLElement | null;
 
-    html2canvas(nodeToCapture, {
-      allowTaint: true,
-      useCORS: true,
-    }).then(function (canvas) {
-      const image = canvas.toDataURL("image/png");
-      const a = document.createElement("a");
-      a.href = image;
-      a.download = "gpt-diary-result.png";
-      a.click();
-    });
+    if (nodeToCapture) {
+      html2canvas(nodeToCapture, {
+        allowTaint: true,
+        useCORS: true,
+      }).then(function (canvas) {
+        const image = canvas.toDataURL("image/png");
+        const a = document.createElement("a");
+        a.href = image;
+        a.download = "gpt-diary-result.png";
+        a.click();
+      });
+    }
   };
 
   return (
