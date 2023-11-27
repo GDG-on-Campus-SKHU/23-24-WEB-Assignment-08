@@ -7,10 +7,18 @@ import html2canvas from "html2canvas";
 
 const { TextArea } = Input;
 
-const DiaryInput = ({ isLoading, onSubmit, messageApi }) => {
-  const [userInput, setUserInput] = useState("");
+interface DiaryInputProps {
+  isLoading: boolean;
+  onSubmit: (input: string) => void;
+  messageApi: {
+    open: (config: { type: string; content: string }) => void;
+  };
+}
 
-  const handleUserInput = (e) => {
+const DiaryInput: React.FC<DiaryInputProps> = ({ isLoading, onSubmit, messageApi }) => {
+  const [userInput, setUserInput] = useState<string>("");
+
+  const handleUserInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setUserInput(e.target.value);
   };
 
@@ -27,7 +35,7 @@ const DiaryInput = ({ isLoading, onSubmit, messageApi }) => {
       content: "생성 요청 완료",
     });
     onSubmit(userInput);
-    setUserInput(null);
+    setUserInput(""); // 값을 초기화하도록 수정
   };
 
   const captureAndDownload = async () => {
@@ -81,5 +89,3 @@ const ButtonContainer = styled.div`
   justify-content: flex-end;
   gap: 5px;
 `;
-
-

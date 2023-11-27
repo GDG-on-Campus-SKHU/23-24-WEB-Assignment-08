@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 
-function Counter() {
-  const [count, setCount] = useState(0);
-  const [userInput, setUserInput] = useState("");
+const Counter: React.FC = () => {
+  const [count, setCount] = useState<number>(0);
+  const [userInput, setUserInput] = useState<string>("");
 
   const handleClickPlus = () => {
-    setCount(count + 1);
+    setCount((prevCount) => prevCount + 1);
   };
 
   const handleClickMinus = () => {
-    setCount(count - 1);
+    setCount((prevCount) => prevCount - 1);
   };
 
-  const handleUserInput = (e) => {
+  const handleUserInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserInput(e.target.value);
   };
 
-  const handleEnter = (e) => {
+  const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       setUserInput("");
       const num = Number(userInput);
@@ -26,24 +26,22 @@ function Counter() {
 
   return (
     <>
-      <div>current count : {count}</div>
+      <div>current count: {count}</div>
       <div>
-        <div>count value input :</div>
+        <div>count value input:</div>
         <input
           value={userInput}
           onChange={handleUserInput}
           onKeyDown={handleEnter}
-        ></input>
+        />
       </div>
       <div>
-        <div>buttons : </div>
+        <div>buttons:</div>
         <button onClick={handleClickPlus}>+</button>
         <button onClick={handleClickMinus}>-</button>
       </div>
     </>
   );
-}
+};
 
 export default Counter;
-
-
