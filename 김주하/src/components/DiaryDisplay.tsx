@@ -63,15 +63,15 @@ const DiaryDisplay: React.FC<DiaryDisplayProps> = ({ data, isLoading }) => {
       <Divider />
       <CardContainer>
         <CardTitle>
-          <HeartTwoTone twoToneColor="#eb2f96" />
-          오늘의 일기
+          <HeartTwoTone twoToneColor="#eb2f96" style={{ marginRight: "6px" }} />
+           오늘의 일기
         </CardTitle>
         <CardContent>{data.emotional_content}</CardContent>
       </CardContainer>
       <Divider />
       <CardContainer>
         <CardTitle>
-          <SmileTwoTone twoToneColor="#faad14" />
+          <SmileTwoTone twoToneColor="#faad14" style={{ marginRight: "6px" }}/>
           내가 느낀 감정
         </CardTitle>
         <CardContent>{data.emotional_result}</CardContent>
@@ -90,7 +90,7 @@ const DiaryDisplay: React.FC<DiaryDisplayProps> = ({ data, isLoading }) => {
       <Divider />
       <CardContainer>
         <CardTitle>
-          <SoundTwoTone twoToneColor="#1890ff" />
+          <SoundTwoTone twoToneColor="#1890ff" style={{ marginRight: "6px" }}/>
           GPT 조언
         </CardTitle>
         <CardContent>
