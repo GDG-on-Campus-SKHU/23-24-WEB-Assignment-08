@@ -66,7 +66,7 @@ export const CallGPT = async ({ prompt }: { prompt: string }) => {
         }
         
         [events]:`
-      }
+      },
       {
         role: "user",
         content: `1. [title] : Think of the diary title after understanding the [events] separated by 
