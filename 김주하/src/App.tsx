@@ -6,7 +6,7 @@ import DiaryDisplay from "./components/DiaryDisplay";
 import { message } from "antd";
 import logo from "./assets/logo.png";
 
-// dummyData의 타입 정의
+// dummyData의 타입 정의: JSON 파싱 값 추출(돈 아낌)
 const dummyData: DiaryData = {
   title: "",
   thumbnail: "",
