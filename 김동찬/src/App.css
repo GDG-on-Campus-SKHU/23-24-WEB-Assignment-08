@@ -1,0 +1,57 @@
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+
+}
+
+.App {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 800px;
+}
+
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+li {
+  background-color: #fff;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  color: #333;
+  margin: 0;
+  margin-bottom: 20px;
+
+}
+
+p {
+  color: #666;
+  margin: 10px 0;
+}
+
+.cultural-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
