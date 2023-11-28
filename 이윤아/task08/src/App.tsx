@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, GeoJSON, useMap } from 'react-leaflet';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import L from 'leaflet';
-const MapComponent = () => {
-  const [geojsonData, setGeojsonData] = useState(null);
+
+const ApiComponent = () => {
+  const [apiData, setApiData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https://smart.incheon.go.kr/server/rest/services/Hosted/상습_침수구역/FeatureServer/194/query?outFields=*&where=1%3D1&f=geojson'
+          'https://apis.data.go.kr/6280000/ICTaxiStat/TaxiIntensiveAreaInfo?serviceKey=1%2BBp0W4NcROGYiDYhfO%2FME5j1bUMdCZtsMvxHJeIrJ9KJRpPq9lkVZrKNPIOvLzEEqUGqBXrHRkIe27SsvpaaQ%3D%3D&pageNo=1&numOfRows=10&YMD=20220701'
         );
-        setGeojsonData(response.data);
+        setApiData(response.data);
       } catch (error) {
-        console.error('Error fetching GeoJSON data:', error);
+        console.error('Error fetching API data:', error);
       }
     };
 
@@ -22,33 +21,28 @@ const MapComponent = () => {
 
   return (
     <div>
-      <h1>지도 보기</h1>
-      {geojsonData && (
-        <MapContainer
-          style={{ height: '500px', width: '100%' }}
-          zoom={12}
-          center={[37.456, 126.705]}
-        >
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          />
-          <GeoJSON
-            data={geojsonData}
-            style={() => ({
-              color: 'black',
-              weight: 2, 
-              fillOpacity: 0.5,
-              fillColor: 'green' 
-            })}
-            onEachFeature={(feature, layer) => {
-              layer.bindPopup(`속성 값: ${JSON.stringify(feature.properties)}`);
-            }}
-          />
-        </MapContainer>
-      )}
+      <div className="header">
+        <img src="public/title_logo.png" alt="Title Logo" />
+      </div>
+      <div>
+        <h1>인천광역시 택시 통계 서비스</h1>
+        {apiData && (
+          <div>
+            <ul className="api-list">
+              {apiData.response.body.items.map((item, index) => (
+                <li key={index} className="api-item">
+                  <p>날짜: {item.ymd}</p>
+                  <p>시간: {item.hour}</p>
+                  <p>동네이름: {item.dongName}</p>
+                  <p>랭킹: {item.rank}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
 
-export default MapComponent;
+export default ApiComponent;
