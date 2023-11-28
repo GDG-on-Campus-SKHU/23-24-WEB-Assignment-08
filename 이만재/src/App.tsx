@@ -79,7 +79,7 @@ const App = () => {
   const backgroundImageClass = getBackgroundImageClass(
     weather?.weather[0]?.main
   );
-  const SERVICE_KEY = "5696da335b41726d1bfe123414bb01ed";
+  const SERVICE_KEY = import.meta.env.VITE_SERVICE_KEY;
 
   const getUserPlace = () => {
     // API에서 현재 위치를 가져오는 로딩시간동안 localStorage에 저장된 도시의 날씨정보 먼저 가져오도록 설정
@@ -118,7 +118,7 @@ const App = () => {
     );
   };
   useEffect(() => {
-    // useEffect를 사용해 처음 화면이 렌더링 될 때는 현 위치를 가져오도록 설정
+    // useEffect를 사용해 처음 화면이 렌더링 될 때는 현 위치를 가져오는 대시시간동안 localStorage에 저장된 도시의 날씨정보 먼저 가져오도록 설정
     getUserPlace();
   }, []);
 
