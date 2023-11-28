@@ -69,12 +69,46 @@ export const CallGPT = async ({ prompt }: { prompt: string }) => {
       },
       {
         role: "user",
-        content: `1. [title] : Think of the diary title after understanding the [events] separated by 
+        content: `
           ${prompt}
           "''"`,
       },
     ];
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    /**
+     * curl https://api.openai.com/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -d '{
+     "model": "gpt-3.5-turbo",
+     "messages": [{"role": "user", "content": "Say this is a test!"}],
+     "temperature": 0.7
+   }'
+     */
+    
+    /**
+     * {
+    "id": "chatcmpl-abc123",
+    "object": "chat.completion",
+    "created": 1677858242,
+    "model": "gpt-3.5-turbo-1106",
+    "usage": {
+        "prompt_tokens": 13,
+        "completion_tokens": 7,
+        "total_tokens": 20
+    },
+    "choices": [
+        {
+            "message": {
+                "role": "assistant",
+                "content": "\n\nThis is a test!"
+            },
+            "finish_reason": "stop",
+            "index": 0
+        }
+    ]
+}
+     */
+    const response = await fetch("https://api.openai.com/v1/chat/completions", { //401 에러
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -82,13 +116,14 @@ export const CallGPT = async ({ prompt }: { prompt: string }) => {
       },
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
+        // messages: [{"role": "user", "content": "Say this is a test!"}],
         messages,
         temperature: 0.7,
-        max_tokens: 1_000,
+        // max_tokens: 1_000,
       }),
     });
     const responseData = await response.json();
-    console.log(">>responseData", responseData);
+    console.log(">>responseData", responseData); //제대로 받아와 짐
     const message = responseData.choices[0].message.content;
     return message;
   };
