@@ -1,0 +1,133 @@
+html,
+body,
+#root {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  transition: background-image 0.2s ease-in-out;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.85);
+
+  .navBar {
+    width: 30%;
+    height: calc(100vh - 40px);
+    margin-left: auto;
+    order: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    .InputBar {
+      border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+      display: flex;
+
+      input {
+        width: 90%;
+        border: none;
+        outline: none;
+        background: none;
+        color: white;
+        font-size: 15px;
+        margin-left: 15px;
+        margin-bottom: 5px;
+      }
+      button {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        color: white;
+        width: 15px;
+        height: 15px;
+        margin-right: 20px;
+        transition: fot-size 0.5s ease-in-out;
+
+        &:hover {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+  .nav_weatherInfo {
+    display: flex;
+    margin-top: auto;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    p {
+      width: 100%;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+      font-size: 25px;
+    }
+
+    div {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .Date {
+    margin-left: 20px;
+    font-size: 20px;
+  }
+  .weatherInfo {
+    display: flex;
+    font-size: 30px;
+    position: absolute;
+    bottom: 0;
+    align-items: center;
+    margin-bottom: 10%;
+    margin-left: 40px;
+
+    div:nth-child(1) {
+      font-size: 65px;
+    }
+
+    div:nth-child(2) {
+      font-size: 40px;
+      margin-left: 20px;
+    }
+
+    .icon {
+      svg {
+        width: 60px;
+        height: 60px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.weather_default {
+  background-image: url("../public/img/default.jpg");
+}
+
+.weather_clear {
+  background-image: url("../public/img/clear.jpg");
+}
+
+.weather_cloud {
+  background-image: url("../public/img/cloud.jpg");
+}
+
+.weather_rain {
+  background-image: url("../public/img/rain.jpg");
+}
+
+.weather_snow {
+  background-image: url("../public/img/snow.jpg");
+}
+
+.weather_thunder {
+  background-image: url("../public/img/thunder.jpg");
+}
